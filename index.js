@@ -1,5 +1,6 @@
-import { Telegraf } from "telegraf";
 import puppeteer from "puppeteer";
+import dedent from 'dedent-js'
+import { Telegraf } from "telegraf";
 import { readFile, writeFile } from "node:fs";
 import { parse } from "node-html-parser";
 
@@ -58,10 +59,10 @@ async function checkForNewEpisodes() {
     if (parseInt(current_ep) > last_ep) {
       bot.telegram.sendMessage(
         process.env.CHAT_ID,
-        `Hello, New Episode Solo Leveling:
+        dedent(`Hello, New Episode Solo Leveling:
 
-Solo Leveling Episode ${current_ep}:
-${url_final}`
+        Solo Leveling Episode ${current_ep}:
+        ${url_final}`)
       );
       writeFile("last_ep.txt", current_ep, (err) => {
         if (err) console.log(err);
