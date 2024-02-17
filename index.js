@@ -66,6 +66,8 @@ async function checkForNewEpisodes() {
       writeFile("last_ep.txt", current_ep, (err) => {
         if (err) console.log(err);
       });
+
+      clearInterval(intervalo)
     }
     else {
       console.log('sem novos episodios')
@@ -79,7 +81,7 @@ async function checkForNewEpisodes() {
 }
 
 // Cria um loop para verificar episódios a cada 5 minutos
-setInterval(checkForNewEpisodes, 5 * 60 * 1000);
+var intervalo = setInterval(checkForNewEpisodes, 5 * 60 * 1000);
 
 // Cria o bot do Telegram
 const bot = new Telegraf(process.env.BOT_TOKEN);
