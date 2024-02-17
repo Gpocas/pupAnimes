@@ -60,8 +60,8 @@ async function checkForNewEpisodes() {
         process.env.CHAT_ID,
         `Hello, New Episode Solo Leveling:
 
-        Solo Leveling Episode ${current_ep}:
-        ${url_final}`
+Solo Leveling Episode ${current_ep}:
+${url_final}`
       );
       writeFile("last_ep.txt", current_ep, (err) => {
         if (err) console.log(err);
