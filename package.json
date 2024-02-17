@@ -16,5 +16,8 @@
     "node-html-parser": "^6.1.12",
     "puppeteer": "^22.0.0",
     "telegraf": "^4.15.3"
+  },
+  "devDependencies": {
+    "prisma": "^5.9.1"
   }
 }
